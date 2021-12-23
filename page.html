@@ -1,0 +1,237 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Tangerine">
+
+    <title>My Contacts</title>
+
+    <style>
+        body {
+            background-repeat: no-repeat;
+            background-attachment: scroll;
+            background-size: cover;
+            background-image: url('background.jpg');
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        #count  {
+            font-weight: bold;
+        }
+        
+        .row {
+          display: flex;
+          padding: 15px;
+        }
+        
+        /* Create three equal columns that sits next to each other */
+        .column {
+          flex: 33.33%;
+        }
+
+        .header {
+            padding: 2px 12px;
+            float: right;
+            font-size: 30px;
+        }
+
+        .header:hover {
+            opacity: 0.7;
+            transform: scale(1.2, 1.2);
+            cursor: pointer;
+        }
+
+        .modal-body, .modal-header  {
+            background: #B0E6FF;
+        }
+
+        #modal-image    {
+            height: 310px;
+            width: 310px;
+        }
+
+        .profile {
+            display: block;
+            margin: 50px auto 0 auto;
+            height: 85px;
+            width: 85px;
+            border-radius: 50%;
+            box-shadow: 10px 10px 10px rgba(0,0,0,0.15);
+        }
+
+        /* .rotate{
+            border: 4px dashed skyblue;
+            border-radius: 50%;
+            -webkit-animation: rotate 12s linear infinite;
+        }
+
+        @-webkit-keyframes rotate {
+            from{ -webkit-transform: rotate(0deg);   }
+            to{   -webkit-transform: rotate(360deg); }
+        } */
+
+        .w3-tangerine {
+            font-family: 'Tangerine', serif;
+            font-size: 50px;
+            text-shadow: 10px 10px 10px rgba(0,0,0,30);
+        }
+
+        .center, .mainbody {
+            display: block;
+            margin: auto;
+            text-align: center;
+            color: white;
+        }
+
+        .btn {
+            padding: 20px;
+            font-size: 30px;
+            width: 70px;
+            text-align: center;
+            text-decoration: none;
+            margin: 2px 2px;
+            border-radius: 40%;
+            background: rgb(174, 232, 255);
+            color: #007bb5;
+            box-shadow: 20px 20px 10px rgba(0,0,0,0.15);
+        }
+
+        .btn:hover  {
+            opacity: 0.7;
+            background: #007bb5;
+            color: white;
+            transform: scale(1.2, 1.2);
+            cursor: pointer;
+        }
+
+        .btn::after, .header::after {
+            color:rgb(0, 174, 255);
+        }
+
+        .fa-qrcode  {
+            color: white;
+        }
+        
+        footer, #link  {
+            color: white;
+        }
+
+        </style>
+
+  </head>
+  <body>
+    <!--Header starts--->
+    <div class="header">
+        <a class="fas fa-qrcode" data-bs-toggle="modal" data-bs-target="#myModal"></a>
+    </div>
+    <br></br>
+    <!--Header end--->
+    
+    <!-- Modal -->
+    <div class="modal fade" id="myModal" tabindex="-1" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h6 class="modal-title" id="myModalLabel">You can scan the QR code</h6>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <img id= "modal-image" class="center" src="qr-code.png">
+            </div>
+            <!-- <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div> -->
+          </div>
+        </div>
+      </div>
+    <!-- Modal -->
+
+    <!-- Profile start -->
+    <div class="center">
+        <img class="profile rotate" src="myphoto.jpg" alt="Elon Musk">
+        <h5 class="w3-tangerine">Sayan Chowdhury</h5>
+        <span id="count">0</span><span> views</span>
+        <h6><b>Welcome to my contacts.</b></h6>
+        <h6>You can add me in your social from below.</h6>
+    </div>
+    <br></br>
+    <!-- Profile end -->
+
+    <!-- Button rows -->
+    <div class="container mainbody">
+        <div class="row">
+            <div class="column">
+                <a href="https:/www.facebook.com/sayan.chowdhury.564/" class="btn fab fa-facebook-f"></a>
+            </div>
+            <div class="column">
+                <a href="https://www.instagram.com/i_am_sayan_chowdhury/" class="btn fab fa-instagram"></a>
+            </div>
+            <div class="column">
+                <a href="https://www.linkedin.com/in/sayan-chowdhury123/" class="btn fab fa-linkedin-in"></a>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="column">
+                <a href="https://wa.me/919836087043?text=Hi there!" class="btn fab fa-whatsapp"></a>
+            </div>
+            <div class="column">
+                <a href="tel:+919836087043" class="btn fas fa-phone"></a>
+            </div>
+            <div class="column">
+                <a href="mailto:sayanmicro@gmail.com?Subject=Hello%20there!" class="btn far fa-envelope"></a>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="column">
+                <a href="#" class="btn far fa-envelope"></a>
+            </div>
+            <div class="column">
+                <a href="#" class="btn far fa-envelope"></a>
+            </div>
+            <div class="column">
+                <a href="#" class="btn far fa-envelope"></a>
+            </div>
+        </div>
+    </div> 
+    <!-- Button rows -->
+
+
+    <!--Footer starts--->
+	<footer class="container text-center my-4">
+        <div class="float-left">2021 . Webpage made by <a id="link" href="#">Sayan Chowdhury</a>.</div>
+        <div class="float-right mt-2"><a id="link" href="#">Back to top</a></div>
+    </footer>
+    <!--Footer end--->
+    
+
+
+    <script>
+        const countEl = document.getElementById('count');
+
+        updateVisitCount();
+
+        function updateVisitCount()   {
+            fetch('https://api.countapi.xyz/update/siteopen/okstartok/?amount=1').then(res => res.json()).then(res => {
+                countEl.innerHTML = res.value;
+            });
+        }
+    </script>
+
+
+  </body>
+</html>
