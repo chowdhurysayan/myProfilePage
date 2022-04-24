@@ -56,8 +56,8 @@ body.dark-theme {
     --btn-background: #2A2A2A;
     --btn-color: #B0FDA3;
 
-    --btn-hover-background: #2A2A2A;
-    --btn-hover-color: #B0FDA3;
+    --btn-hover-background: #B0FDA3;
+    --btn-hover-color: #2A2A2A;
 
     --btn-after-header-after: #2A2A2A;
 
