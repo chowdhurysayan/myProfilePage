@@ -1,0 +1,261 @@
+:root{
+    --modal-background-header-body: #B0FDA3;
+    --modal-image-id-background: url(qr-code.png);
+    --modal-title-id-color: #121212;
+
+    --mainbody-color: #121212;
+
+    --btn-background: #B0FDA3;
+    --btn-color: #121212;
+
+    --btn-hover-background: #121212;
+    --btn-hover-color: #B0FDA3;
+
+    --btn-after-header-after: #EFFFED;
+
+    --fa-qrcode-color: #B0FDA3;
+    --fa-qrcode-hover-color: #121212;
+
+    --footer-link-color: #121212;
+
+    --spinner-background-color: #A4D48C;
+    --spinner-loader-border-background-color: #121212;
+}
+
+body {
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    background-size: cover;
+    background-image: url('background.png');
+}
+
+* {
+    box-sizing: border-box;
+}
+
+/*View Counter section*/
+#count {
+    font-weight: bold;
+}
+
+.row {
+    display: flex;
+    padding: 15px;
+}
+
+/* Create three equal columns that sits next to each other */
+.column {
+    flex: 33.33%;
+}
+
+/*Header section*/
+.header {
+    padding: 2px 12px;
+    font-size: 30px;
+}
+
+/*Left Toggle*/
+.goleft {
+    opacity: 0.7;
+    float: left;
+}
+
+.goleft:hover {
+    color: #777;
+    opacity: 0.7;
+    transform: scale(1.2, 1.2);
+    cursor: pointer;
+}
+
+/*Right Button*/
+.goright {
+    float: right;
+}
+
+.goright:hover {
+    opacity: 0.7;
+    transform: scale(1.4, 1.4);
+    cursor: pointer;
+}
+
+/*Modal CSS*/
+.modal-body,
+.modal-header {
+    background: var(--modal-background-header-body);
+    color: var(--modal-title-id-color);
+}
+
+/* .modal-title,
+.btn-close    {
+    color: var(--modal-title-id-color);
+} */
+
+#modal-image {
+    height: 310px;
+    width: 310px;
+    background-size: cover;
+    content: var(--modal-image-id-background);
+}
+
+.profile {
+    display: block;
+    margin: 50px auto 0 auto;
+    height: 85px;
+    width: 85px;
+    border-radius: 50%;
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.15);
+}
+
+/* .rotate{
+    border: 4px dashed skyblue;
+    border-radius: 50%;
+    -webkit-animation: rotate 12s linear infinite;
+}
+
+@-webkit-keyframes rotate {
+    from{ -webkit-transform: rotate(0deg);   }
+    to{   -webkit-transform: rotate(360deg); }
+} */
+
+.w3-tangerine {
+    font-family: 'Tangerine', serif;
+    font-size: 50px;
+    text-shadow: 10px 10px 10px rgba(0, 0, 0, 30);
+}
+
+.center,
+.mainbody {
+    display: block;
+    margin: auto;
+    text-align: center;
+    color: var(--mainbody-color);
+}
+
+/*Buttons CSS*/
+.btn {
+    padding: 20px;
+    font-size: 30px;
+    width: 70px;
+    text-align: center;
+    text-decoration: none;
+    margin: 2px 2px;
+    border-radius: 40%;
+    background: var(--btn-background);
+    color: var(--btn-color);
+    box-shadow: 20px 20px 10px rgba(0, 0, 0, 0.15);
+}
+
+.btn:hover {
+    opacity: 0.7;
+    background: var(--btn-hover-background);
+    color: var(--btn-hover-color);
+    transform: scale(1.2, 1.2);
+    cursor: pointer;
+}
+
+.btn::after,
+.header::after {
+    color: var(--btn-after-header-after);
+}
+
+.fa-qrcode {
+    text-decoration: none;
+    color: var(--fa-qrcode-color);
+}
+
+.fa-qrcode:hover {
+    color: var(--fa-qrcode-hover-color);
+}
+
+/*Footer section*/
+footer,
+#link {
+    color: var(--footer-link-color);
+}
+
+/** Spinner CSS **/
+
+/* body,
+html {
+    height: 100%;
+    text-align: center;
+} */
+
+/* body {
+    background-color: #242F3F;
+} */
+
+.spinner-wrapper{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: var(--spinner-background-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.loader {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    position: relative;
+    border: 4px solid var(--spinner-loader-border-background-color);
+    animation: loader 2s infinite ease;
+}
+
+.loader-inner {
+    vertical-align: top;
+    display: inline-block;
+    width: 100%;
+    background-color: var(--spinner-loader-border-background-color);
+    animation: loader-inner 2s infinite ease-in;
+}
+
+@keyframes loader {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    25% {
+        transform: rotate(180deg);
+    }
+
+    50% {
+        transform: rotate(180deg);
+    }
+
+    75% {
+        transform: rotate(360deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes loader-inner {
+    0% {
+        height: 0%;
+    }
+
+    25% {
+        height: 0%;
+    }
+
+    50% {
+        height: 100%;
+    }
+
+    75% {
+        height: 100%;
+    }
+
+    100% {
+        height: 0%;
+    }
+}
+
+/** Spinner CSS **/
