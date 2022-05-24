@@ -21,10 +21,11 @@
     --spinner-background-color: #A4D48C;
     --spinner-loader-border-background-color: #121212;
 
-    --toggle-inside-background-image-sun: url(sun-line.svg);
-    --toggle-inside-background-image-moon: url(moon-line.svg);
+    --toggle-inside-background-image-sun: url(sun-solid.svg);
+    --toggle-inside-background-image-moon: url(moon-solid.svg);
 
-    --toggle-dark-color: #3E6837;
+    --toggle-background-color: #B0FDA3;
+    --toggle-border-color: #63A357;
 }
 
 body {
@@ -112,7 +113,16 @@ body {
     box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.15);
 }
 
-/*Profile Image back border rotation*/
+/* .rotate{
+    border: 4px dashed skyblue;
+    border-radius: 50%;
+    -webkit-animation: rotate 12s linear infinite;
+}
+
+@-webkit-keyframes rotate {
+    from{ -webkit-transform: rotate(0deg);   }
+    to{   -webkit-transform: rotate(360deg); }
+} */
 
 .rotate {
     position: relative;
@@ -135,7 +145,7 @@ body {
     height: 100%;
     /* background-image: linear-gradient(0deg, #FF00CC 0%, #333399 100%); */
     background-image: linear-gradient(0deg, var(--spinner-background-color) 0%, var(--spinner-loader-border-background-color) 100%);
-    animation: spin 4s infinite linear;
+    animation: spin 5s infinite linear;
 }
 
 @keyframes spin {
@@ -143,8 +153,6 @@ body {
         transform: rotate(360deg);
     }
 }
-
-/*Profile Image back border rotation*/
 
 .w3-tangerine {
     font-family: 'Tangerine', serif;
@@ -161,7 +169,6 @@ body {
 }
 
 /*Buttons CSS*/
-
 .btn {
     padding: 20px;
     font-size: 30px;
@@ -188,8 +195,6 @@ body {
     color: var(--btn-after-header-after);
 }
 
-/*Buttons CSS*/
-
 .fa-qrcode {
     text-decoration: none;
     color: var(--fa-qrcode-color);
@@ -200,15 +205,22 @@ body {
 }
 
 /*Footer section*/
-
 footer,
 #link {
     color: var(--footer-link-color);
 }
 
-/*Footer section*/
+/** Spinner CSS **/
 
-/* Spinner CSS */
+/* body,
+html {
+    height: 100%;
+    text-align: center;
+} */
+
+/* body {
+    background-color: #242F3F;
+} */
 
 .spinner-wrapper{
     z-index: 6;
@@ -284,45 +296,50 @@ footer,
     }
 }
 
-/* Spinner CSS */
+/** Spinner CSS **/
 
 /*Toggle Dark Mode CSS*/
 
-#toggle {
+.toggle input[type='checkbox'] {
     display: none;
 }
 
-.togbtn {
+.toggle label {
+    background-color: var(--toggle-background-color);
+    border: 2px solid var(--toggle-border-color);
+    border-radius: 25px;
+    cursor: pointer;
     display: inline-block;
+    position: relative;
+    transition: all ease-in-out 0.3s;
     width: 50px;
     height: 25px;
-    background-color: #fff;
-    border-radius: 30px;
-    position: relative;
+}
+
+.toggle label::after {
+    /* background-image: url(sun-solid.svg); */
+    background-image: var(--toggle-inside-background-image-sun);
+    fill: red;
+    content: ' ';
     cursor: pointer;
-}
-
-.togbtn::after  {
-    content: var(--toggle-inside-background-image-sun);
-    width: 30px;
-    height: 30px;
-    background-color: var(--toggle-dark-color);
-    border: 2px solid #fff;
-    border-radius: 50%;
+    display: inline-block;
     position: absolute;
-    top: -2px;
-    left: 0;
-    display: grid;
-    place-content: center;
-    line-height: 0;
-    transition: background-color 1s,
-        transform 1s ease-in-out;
+    left: 2px;
+    top: 2px;
+    transition: all ease-in-out 0.3s;
+    width: 17px;
+    height: 17px;
 }
 
-#toggle:checked + .togbtn::after    {
-    content: var(--toggle-inside-background-image-moon);
-    background-color: var(--toggle-dark-color);
-    transform: translateX(25px) rotate(360deg);
-}
+/* .toggle input[type='checkbox']:checked ~ label {
+    background-color: #B0FDA3;
+    border-color: #71a369;
+} */
+
+.toggle input[type='checkbox']:checked ~ label::after {
+    /* background-image: url(moon-solid.svg); */
+    background-image: var(--toggle-inside-background-image-moon);
+    transform: translateX(25px);
+} 
 
 /*Toggle Dark Mode CSS*/
