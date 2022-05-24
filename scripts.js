@@ -17,19 +17,24 @@ function togglelightdarkmode()   {
     toggle.addEventListener('input', e => {
         const isChecked = e.target.checked;
 
-        $(".spinner-wrapper").fadeIn("slow");
-        setTimeout(spinnerWait, 2000);
+        var delayInMilliseconds = 1500;
+
+        setTimeout(function() {
+            $(".spinner-wrapper").fadeIn("slow");
+            setTimeout(spinnerWait, 2000);
+            
+            if (isChecked) {
+                body.classList.add('dark-theme');
+            } else {
+                body.classList.remove('dark-theme');
+            }
+        }, delayInMilliseconds);
+
         
-        if (isChecked) {
-            body.classList.add('dark-theme');
-        } else {
-            body.classList.remove('dark-theme');
-        }
     });
 }
 
-
-//Spinner Appear - Wait 1.5 seconds - Disappear Method
+//Spinner Appear - Wait 2 seconds - Disappear Method
 function spinnerWait() {
     $(".spinner-wrapper").fadeOut("slow");
     return;
