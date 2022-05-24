@@ -39,10 +39,69 @@
         }
 
         .text   {
-            font-family: 'Square Peg', cursive;
-            font-size: 75px;
-            color: #B0FDA3;
+            font-family: monospace;
+            font-size: 50px;
         }
+
+        /* Typing text CSS */
+
+        .type   {
+            
+            color: #0000;
+            background:
+                linear-gradient(-90deg,#ffffff 5px,#0000 0) 10px 0,
+                linear-gradient(#B0FDA3 0 0) 0 0;
+            background-size: calc(var(--n)*1ch) 200%;
+            -webkit-background-clip: padding-box,text;
+            background-clip: padding-box,text;
+            background-repeat: no-repeat;
+            animation: 
+                b .7s infinite steps(1),   
+                t calc(var(--n)*.3s) steps(var(--n)) forwards;
+        }
+
+        @keyframes t    {
+            from {background-size:0 200%}
+        }
+
+        @keyframes b    {
+            50% {background-position:0 -100%,0 0}
+        }
+
+        /* Different Style (working)*/
+
+        /* .type {
+            color:#0000;
+            background:
+                linear-gradient(-90deg,#00DFFC 1ch,#0000 0) 0 0,
+                linear-gradient(-90deg,#0000 1ch,#00DFFC 0) 0 0,
+                rgba(0,0,0,0.3);
+            background-size:calc(var(--n)*1ch) 200%;
+            -webkit-background-clip:text;
+            background-clip:text;
+            background-repeat:no-repeat;
+            animation: 
+            b .4s infinite linear,   
+            t calc(var(--n)*.4s) steps(var(--n)) forwards;
+        } */
+
+        /* @keyframes t{
+            from {background-size:0 200%}
+        } */
+        
+        /* @keyframes b{
+            0% {background-position:0 200%,0 0}
+        } */
+
+        /* Different Style (working)*/
+
+        /* Typing text CSS */
+
+        .space  {
+            height: 100px;
+        }
+
+        /* Back Button CSS */
 
         .fa-arrow-left  {
             height: 80px;
@@ -67,16 +126,19 @@
             transform: scale(1.2, 1.2);
         }
 
+        /* Back Button CSS */
+
     </style>
 </head>
 
 <body>
     <div class="center text">
-        <p class="pageText" id="pageText">Page currently under development.</p>
+        <span class="type" style="--n:53">Page is currently under development...</span>
     </div>
 
+    <div class="space"></div>
+
     <div class="center backBtn">
-        <!-- <a href="https://chowdhurysayan.github.io/myProfilePage/" class="fas fa-arrow-left"></a> -->
         <a href="index.html" class="fas fa-arrow-left"></a>
     </div>
 </body>
