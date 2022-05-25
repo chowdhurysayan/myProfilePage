@@ -1,6 +1,6 @@
 :root{
     --modal-background-header-body: #B0FDA3;
-    --modal-image-id-background: url(qr-code.png);
+    --modal-image-id-background: url('qr-code.png');
     --modal-title-id-color: #121212;
 
     --mainbody-color: #121212;
@@ -21,8 +21,8 @@
     --spinner-background-color: #A4D48C;
     --spinner-loader-border-background-color: #121212;
 
-    --toggle-inside-background-image-sun: url(sun-line.svg);
-    --toggle-inside-background-image-moon: url(moon-line.svg);
+    --toggle-inside-background-image-sun: url('sun-line.svg');
+    --toggle-inside-background-image-moon: url('moon-line.svg');
 
     --toggle-dark-color: #3E6837;
 }

@@ -8,7 +8,7 @@ body.dark-theme {
     background-image: url('background-dark.png');
     
     --modal-background-header-body: #2A2A2A;
-    --modal-image-id-background: url(qr-code-dark.png);
+    --modal-image-id-background: url('qr-code-dark.png');
     --modal-title-id-color: #B0FDA3;
 
     --mainbody-color: #B0FDA3;
