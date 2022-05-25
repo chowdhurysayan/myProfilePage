@@ -211,14 +211,11 @@ footer,
 /* Spinner CSS */
 
 .spinner-wrapper{
-    background-repeat: no-repeat;
-    background-attachment: scroll;
-    background-size: cover;
     z-index: 6;
     width: 100%;
-    height:112%;
+    height: 120%;
     position: absolute;
-    top: 0;
+    top: -50px;
     left: 0;
     background-color: var(--spinner-background-color);
     display: flex;
