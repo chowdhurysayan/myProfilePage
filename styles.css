@@ -213,9 +213,9 @@ footer,
 .spinner-wrapper{
     z-index: 6;
     width: 100%;
-    height: 120%;
+    height: 100%;
     position: absolute;
-    top: -50px;
+    top: 0;
     left: 0;
     background-color: var(--spinner-background-color);
     display: flex;
