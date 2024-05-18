@@ -1,6 +1,6 @@
 //Visit Count Updator method
 function updateVisitCount() {
-    fetch('https://api.countapi.xyz/update/siteopen/okstartok/?amount=1').then(res => res.json()).then(res => {
+    fetch('https://count.cab/hit/6P8pv5aksK').then(res => res.json()).then(res => {
         countEl.innerHTML = res.value;
     });
 }
