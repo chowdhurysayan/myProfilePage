@@ -1,7 +1,7 @@
 //Visit Count Updator method
 function updateVisitCount() {
     fetch('https://count.cab/hit/6P8pv5aksK').then(res => res.json()).then(res => {
-        countEl.innerHTML = res.value;
+        countEl.innerHTML = res.count;
     });
 }
 
